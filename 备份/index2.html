@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("#go-qrcode").click(function(){
+                if($("#go-qrcode").hasClass("qrcode-target-show")){
+                    $("#go-qrcode").removeClass("qrcode-target-show");
+                    $("#go-qrcode").addClass("qrcode-target-hide");
+                    $("#login-form").hide();  
+                    $("#qrcode").show();                
+                }
+                else{
+                    $("#go-qrcode").removeClass("qrcode-target-hide");
+                    $("#go-qrcode").addClass("qrcode-target-show"); 
+                    $("#qrcode").hide();
+                    $("#login-form").show();                     
+                }
+
+            });
+        });
+        </script>
+        <style type="text/css">
+            /*reset*/
+            *{
+                margin: 0px;
+                padding: 0px;
+                font-size: 16px;
+            }
+            body{
+                min-width: 960px; /*fixed layout*/
+            }
+            /*colors
+                @dark gray: #3f3f3f;
+
+            */
+
+            /*color style*/
+            ul.feature li a,#login-form button,ul.cases>a.reg-btn{
+                background-color: #00bde5;
+            }
+            ul.nav li a:hover,ul.nav li.selected a,
+            #login-form #register-link,#qrcode p,
+            ul.cases>a{
+                color: #00bde5;
+            }
+
+            ul.feature a p, ul.nav li a,ul.cases>a.reg-btn{
+                color: white;
+            }
+            .nav-wrapper, footer{
+                background-color: black;
+            }
+
+            p{
+                color:#3f3f3f;
+            }
+
+            ul{
+                list-style: none;
+                overflow: hidden; /*caculte the height of floated children*/
+            }
+            a{
+                text-decoration: none;
+            }
+            /* nav list */
+            .nav-wrapper{
+                width: 100%;
+                position: fixed; 
+                top: 0px;   
+                z-index: 9000;           
+            }
+            #nav-content{
+                width: 960px;
+                overflow: hidden;
+                margin: auto;
+                text-align:center;
+                padding-top: 2px;
+            }
+
+            /* 2 nav bars, left&right*/
+            ul.nav{
+                width: 410px;
+            }
+            .nav-left, .nav-left li{
+                float: left;
+            }
+            .nav-right, .nav-right li{
+                float: right;
+                
+            }
+            /*logo centered*/
+            #logo{
+                width: 120px;
+                margin: auto;
+            }
+
+            ul.nav li{
+                margin: 0px 7%;
+                padding-top: 20px; /*stretch the height*/
+            }
+            ul.nav li.selected{
+                border-top: solid #00bde5 3px; /*intend for js*/
+            }
+
+
+            /*feature list*/
+            #content{
+                background-color: #f4f4f4;
+                width: 100%;
+            }
+            ul.feature{
+                width: 900px;
+                margin: auto;
+                padding: 50px;
+
+            }
+            /*icon*/
+            .feature .fa {
+                color: white;
+                padding-top: 20%; /*why padding not margin?*/
+                display: block;
+            }
+
+            ul.feature li{
+                text-align: center;
+                float: left;
+                margin: 20px 20px;
+                
+            }
+
+            ul.feature li a{ 
+                display: block;               
+                border-radius:50%;
+                -moz-border-radius:50%; /* Old Firefox */
+                width: 100px;
+                height: 100px;
+                text-align: center; /*center imgs and text*/
+                margin: auto;   
+            }
+            ul.feature li a p{
+                font-size: 1em;
+                margin: 0.3em;
+            }
+            p.intro{
+                line-height: 145%;
+                text-align: center;
+                margin-top: 10px;
+                width: 180px;
+            }
+            /*slides*/
+            #slides{
+                margin-top: 67px;
+                position: relative;
+                overflow: hidden;
+            }
+            .slide img{
+                display: block;
+                margin: 0px -150px;
+
+                
+            }
+            .slide{
+                display: none;
+            }
+            .active{
+                display: block;
+            }
+
+            /*登陆框*/
+            #login-wrapper{
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                padding: 10px 30px;
+                width: 220px;
+                background-color: rgba(0,0,0,0.4);
+            }
+            #login-wrapper a{
+                float: right;
+                color: white;
+                font-size: 0.8em;
+                margin: 10px 0px 10px 10px;
+
+            }
+            #login-wrapper a.qrcode-target {
+                margin: 0;
+                position: absolute;
+                width: 46px;
+                height: 46px;
+                top: 0;
+                right: 0;
+                background-image: url(imgs/icon.png);
+                background-repeat: no-repeat;
+                cursor: pointer;
+                z-index: 101;
+                -webkit-transition: background-position .2s cubic-bezier(0.25,.5,.5,.9);
+                -moz-transition: background-position .2s cubic-bezier(0.25,.5,.5,.9);
+                transition: background-position .2s cubic-bezier(0.25,.5,.5,.9);
+            }
+            #login-wrapper a.qrcode-target-show {
+                background-position: -253px -146px;               
+            }
+            #login-wrapper a.qrcode-target-hide {
+                background-position: -207px -100px;
+            }
+
+            #login-form input{
+                padding: 9px;
+                height: 20px;
+                border: solid white 1px;
+                line-height: 12px;
+                width: 10em;
+            }
+
+            #login-form fieldset { 
+                width: 220px;
+                border : 0px;
+                
+            }
+            #login-wrapper .title{                 
+                font-size: 1.3em;
+                color: white;
+                margin-bottom: 15px;
+            }
+            #login-form label {
+                float: left; 
+                width: 40px;
+                height: 35px;
+                background-color: #aaabab;
+                color: white;
+                text-align: center;
+                padding-bottom: 5px;
+                cursor: pointer;
+            }
+            #login-form input:focus{
+                outline:none;
+            }
+            .input-box{
+                margin: 20px 0px 0px 0px;
+            }
+            #login-form #captcha{
+                width: 4em;
+            }
+
+            #captcha-wrapper{
+                margin-top: 50px;
+            }
+            #login-form button{
+                width: 100%;
+                height: 35px;
+                color: #fff;
+                text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+                font-weight: 400;
+                /*background: -webkit-gradient(linear,left top,left bottom,from(#ec7979),to(red));*/
+                border: 0;
+                margin-top: 20px;
+            }
+            #login-form span.icon{
+                display: inline-block;
+                background-image: url(imgs/icon.png);
+                width: 40px;
+                height: 40px;
+            }
+            #qrcode{
+                text-align: center;
+                width: 165px;
+                margin: 20px auto;
+                display: none;
+            }
+            #qrcode p{
+                font-size: 1em;
+                margin: 15px;
+            }
+            #qrcode img{
+                width: 120px;
+                height: 120px;
+            }
+
+            /*case list*/
+            #case-wrapper{
+                background-color: white;
+            }
+            ul.cases{
+                width: 800px;
+                margin: auto;
+                text-align: center;
+                padding: 50px;
+            }
+            ul.cases li{
+                background-image: url(imgs/brands.png);
+                width: 140px;
+                height: 70px;
+                float: left;
+                margin: 40px 30px;
+            }
+            ul.cases li a{
+                background-image: url(imgs/brands.png);
+                position: relative;
+                opacity: 0.0;
+                display: block;
+                height: 70px;
+                width: 140px;
+                -webkit-transition: opacity 600ms ease-in-out 0ms;
+                -moz-transition: opacity 600ms ease-in-out 0ms;
+                -o-transition: opacity 600ms ease-in-out 0ms;
+                transition: opacity 600ms ease-in-out 0ms;
+            }
+            ul.cases li div{
+                background-image: url(imgs/brands.png);
+                position: relative;
+                opacity: 0.0;
+                display: block;
+                height: 70px;
+                width: 140px;
+                -webkit-transition: opacity 600ms ease-in-out 0ms;
+                -moz-transition: opacity 600ms ease-in-out 0ms;
+                -o-transition: opacity 600ms ease-in-out 0ms;
+                transition: opacity 600ms ease-in-out 0ms;
+            }
+            ul.cases li div:hover{
+                opacity: 1.0;
+            }
+            ul.cases li div:hover img{
+                width: 160px;
+                height: 160px;
+                
+                top: 60px;
+                left: -10px;
+            }
+            ul.cases li div img{
+                position: absolute;
+                top: -9000px;
+            }
+            ul.cases li a:hover img{
+                width: 160px;
+                height: 160px;
+                
+                top: 60px;
+                left: -10px;
+            }
+            ul.cases li a img{
+                position: absolute;
+                top: -9000px;
+            }
+            ul.cases li a:hover{
+                opacity: 1.0;
+            }
+            ul.cases>a{
+                margin:auto;
+                margin-top: 70px;
+                display: block;
+            }
+            ul.cases>a.reg-btn{
+                display: block;
+                width: 150px;
+                height: 30px;
+                line-height: 2em;
+            }
+
+            /*footer*/
+            footer{
+                color: white;
+                width: 100%;
+            }
+            #footer-content{
+                width: 760px;
+                margin: auto;
+                position: relative;
+                padding: 10px 0px;
+            }
+            #footer-content .contact a{
+                color: white;
+                font-size: 0.9em;
+            }
+            #footer-content .contact{
+                position: absolute;
+                top: 30px;
+                left: 140px;
+
+            }
+            .copyright{
+                color: #999999;
+                font-size: 0.9em;
+            }
+
+
+        </style>        
+        <div class="nav-wrapper">
+            <div id="nav-content">
+                <ul class="nav nav-left">
+                    <li class="selected"><a href="" title="首页">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                    <li><a href="" title="功能介绍">功能介绍</a></li>
+                    <li><a href="" title="管理中心">管理中心</a></li>
+                </ul>
+                <img id="logo" src="logo.png">
+                <ul class="nav nav-right">
+                    <li><a href="" title="帮助中心">帮助中心</a></li>
+                    <li><a href="" title="关于我们">关于我们</a></li>
+                    <li><a href="" title="官方博客">官方博客</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="content">
+            <div id="slides">
+                <div class="slide" style="background-image:url(imgs/bankarenje_back.jpg);">
+                    <div class="mask">                                
+                        <img class="slide-content"src="imgs/landscape.png">
+                    </div>
+                </div>
+                <div class="slide active">                            
+                    <img class="slide-content"src="imgs/backg.png">
+                </div>
+                <div class="slide" style="background-image:url(imgs/back.jpg);">
+                    <div class="mask">                                
+                        <img class="slide-content"src="imgs/landscape2.png">
+                    </div>
+                </div>
+
+                <div id="login-wrapper">
+                    <a href="#" id="go-qrcode" class="qrcode-target qrcode-target-show" title="二维码"></a> 
+                    <form  id="login-form"> 
+                        <fieldset>               
+                            <legend class="title">登陆微信风</legend>
+
+                            <div class="input-box">
+                                <label for="user">
+                                    <span class="icon" style="background-position:-2px 5px;"></span>
+                                </label>
+                                <input name="user" id="user" type="text" /> 
+                            </div>
+                            <div class="input-box">
+                                <label for="password">
+                                    <span class="icon" style="background-position:-84px 5px;"></span>
+                                </label> 
+                                <input name="password" id="password" type="text" />
+                            </div>
+                            <a href="" id="get-psw">忘记登录密码?</a> 
+                            <div class="input-box" id="captcha-wrapper">
+                                <label for="captcha">
+                                    <span class="icon" style="background-position:-126px 5px;"></span>
+                                </label>
+                                <input name="captcha" id="captcha" type="text" /> 
+                            </div>
+                            <button >登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                            <a href="" id="register-link">免费注册</a>
+                            <a href="">账户激活</a>                   
+                        </fieldset>
+                    </form>
+
+                    <div id="qrcode" class="hide">
+                        <p class="title">公众帐号</p>
+                        <img src="imgs/qrcode.jpg">
+                        <p>请使用微信扫码</p>
+                        <a href="" style="float:left">使用帮助</a>
+                        <a href="">免费注册</a>
+                    </div>                
+                </div>
+
+            <div id="feature-wrapper">
+                <ul class="feature">
+                    <li>
+                        <a href="" title="微官网"><i class="fa fa-mobile fa-2x"></i><p>微官网</p></a>
+                        <p class="intro">5分钟轻松建站</br>打造酷炫微官网</p>
+                    </li> 
+                    <li>
+                        <a href="" title="微活动"><i class="fa fa-money fa-2x"></i><p>微活动</p></a>
+                        <p class="intro">吸引客户参与</br>增强用户沉淀</p>
+                    </li> 
+                    <li>
+                        <a href="" title="微活动"><i class="fa fa-money fa-2x"></i><p>微活动</p></a>
+                        <p class="intro">吸引客户参与</br>增强用户沉淀</p>
+                    </li> 
+                    <li>
+                        <a href="" title="微房产"><i class="fa fa-home fa-2x"></i><p>微房产</p></a>
+                        <p class="intro">房产行业有力的解决方案</br>360度看房更给力</p>
+                    </li> 
+                    <li>
+                        <a href="" title="微汽车"><i class="fa fa-truck fa-2x"></i><p>微汽车</p></a>
+                        <p class="intro">预约试驾活保养 车主关怀</br>360度看车应有尽有</p>
+                    </li> 
+                    <li>
+                        <a href="" title="微统计"><i class="fa fa-superscript fa-2x"></i><p>微统计</p></a>
+                        <p class="intro">折线图清晰查询数据</br>助力企业营销</p>
+                    </li>
+                    <li>
+                        <a href="" title="微酒店"><i class="fa fa-hospital-o fa-2x"></i><p>微酒店</p></a>
+                        <p class="intro">在线订房融入微信</br>酒店营销多一条有力途径</p>
+                    </li>  
+                    <li>
+                        <a href="" title="微活动"><i class="fa fa-money fa-2x"></i><p>微活动</p></a>
+                        <p class="intro">吸引客户参与</br>增强用户沉淀</p>
+                    </li> 
+                </ul>
+            </div>
+
+            <div id="case-wrapper">
+                <ul class="cases">
+                    <li style="background-position:0 0">
+                        <div href="" style="background-position:0 -70px">
+                            <img src="imgs/qrcode.jpg">
+                        </div>
+                    </li>
+                    <li style="background-position:0 -2660px">
+                        <a href="" style="background-position:0 -1610px">
+                            <img src="imgs/qrcode.jpg">
+                        </a>
+                    </li>
+                    <li style="background-position:0 -3500px">
+                        <a href="" style="background-position:0 -2590px">
+                            <img src="imgs/qrcode.jpg">
+                        </a>
+                    </li>
+                    <li style="background-position:0 -1260px">
+                        <a href="" style="background-position:0 -770px">
+                            <img src="imgs/qrcode.jpg">
+                        </a>
+                    </li>
+                    <li style="background-position:0 -2520px">
+                        <a href="" style="background-position:0 -1330px">
+                            <img src="imgs/qrcode.jpg">
+                        </a>
+                    </li>
+                    <li style="background-position:0 -3150px">
+                        <a href="" style="background-position:0 -2380px">
+                            <img src="imgs/qrcode.jpg">
+                        </a>
+                    </li>
+                    <li style="background-position:0 -1190px">
+                        <a href="" style="background-position:0 -280px">
+                            <img src="imgs/qrcode.jpg">
+                        </a>
+                    </li>
+                    <li style="background-position:0 -3010px">
+                        <a href="" style="background-position:0 -1540px">
+                            <img src="imgs/qrcode.jpg">
+                        </a>
+                    </li>
+                    <a href="">更多案例...</a>
+                    <a class="reg-btn" href="">申请入驻</a>
+                </ul>
+
+            </div>
+        </div>
+
+        
+
+
+        <footer>
+            <div id="footer-content">
+                <img src="logo.png">
+                <div class="contact">
+                    <a href="">微信定制</a>|
+                    <a href="">客户咨询</a>|
+                    <a href="">加入我们</a>|
+                    <a href="">关于微信风</a>
+                </div>
+                <p class="copyright">Copyright © 2013-2014 www.weixinfr.com All Rights Reserved 微信风版权所有 浙ICP备12045520号</p>  
+            </div>       
+        </footer>
+    </body>
+
+</html>

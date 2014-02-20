@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+
+        </script>
+        <style type="text/css">
+            /*reset*/
+            *{
+                margin: 0px;
+                padding: 0px;
+                font-size: 16px;
+            }
+            body{
+                min-width: 960px; /*fixed layout*/
+            }
+            /*colors
+                @dark gray: #3f3f3f;
+
+            */
+
+            /*color style*/
+            ul.feature li a{
+                background-color: red;
+            }
+            ul.nav li a:hover,ul.nav li.selected a,
+            #login-form #register-link{
+                color: red;
+            }
+
+            ul.feature a p, ul.nav li a{
+                color: white;
+            }
+            .nav-wrapper, footer{
+                background-color: black;
+            }
+
+            p{
+                color:#3f3f3f;
+            }
+
+            ul{
+                list-style: none;
+                overflow: hidden; /*caculte the height of floated children*/
+            }
+            a{
+                text-decoration: none;
+            }
+            /* nav list */
+            .nav-wrapper{
+                width: 100%;
+                position: fixed; 
+                top: 0px;              
+            }
+            #nav-content{
+                width: 960px;
+                overflow: hidden;
+                margin: auto;
+                text-align:center;
+                padding-top: 2px;
+            }
+
+            /* 2 nav bars, left&right*/
+            ul.nav{
+                width: 410px;
+            }
+            .nav-left, .nav-left li{
+                float: left;
+            }
+            .nav-right, .nav-right li{
+                float: right;
+                
+            }
+            /*logo centered*/
+            #logo{
+                width: 120px;
+                margin: auto;
+            }
+
+            ul.nav li{
+                margin: 0px 7%;
+                padding-top: 20px; /*stretch the height*/
+            }
+            ul.nav li.selected{
+                border-top: solid red 3px; /*intend for js*/
+            }
+
+
+            /*feature list*/
+            ul.feature{
+                width: 960px;
+                margin: auto;
+
+            }
+            /*icon*/
+            .feature .fa {
+                color: white;
+                padding-top: 18%; /*why padding not margin?*/
+                display: block;
+            }
+
+            ul.feature li{
+                text-align: center;
+                float: left;
+                margin: 20px 70px;
+                
+            }
+
+            ul.feature li a{ 
+                display: block;               
+                border-radius:50%;
+                -moz-border-radius:50%; /* Old Firefox */
+                width: 160px;
+                height: 160px;
+                text-align: center; /*center imgs and text*/
+                margin: auto;   
+            }
+            ul.feature li a p{
+                font-size: 1.2em;
+                margin: 0.3em;
+            }
+            p.intro{
+                line-height: 145%;
+                text-align: center;
+                margin-top: 10px;
+                width: 180px;
+            }
+            /*slides*/
+            #slides{
+                margin-top: 80px;
+                position: relative;
+            }
+            .slide-content{
+                display: block;
+                margin: auto;
+                
+            }
+            .mask{
+                background-image: url(imgs/mask.png);
+            }
+            .slide{
+                display: none;
+            }
+            .active{
+                display: block;
+            }
+
+            /*登陆框*/
+            #login-form{
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                padding: 10px 30px;
+                width: 220px;
+                background-color: rgba(0,0,0,0.4);
+            }
+            #login-form input{
+                padding: 9px;
+                height: 20px;
+                border: solid white 1px;
+                line-height: 12px;
+                width: 10em;
+            }
+
+            #login-form fieldset { 
+                width: 220px;
+                border : 0px;
+                
+            }
+            #login-form legend { 
+                
+                font-size: 1.3em;
+                color: white;
+                margin-bottom: 20px;
+            }
+            #login-form label {
+                float: left; 
+                width: 40px;
+                height: 35px;
+                background-color: #aaabab;
+                color: white;
+                text-align: center;
+                padding-top: 5px;
+                cursor: pointer;
+            }
+            #login-form input:focus{
+                outline:none;
+            }
+            .input-box{
+                margin: 20px 0px 0px 0px;
+
+            }
+            #login-form #captcha{
+                width: 4em;
+            }
+            #login-form a{
+                float: right;
+                color: white;
+                font-size: 0.8em;
+                margin: 10px
+
+            }
+            #captcha-wrapper{
+                margin-top: 50px;
+            }
+            #login-form button{
+                width: 100%;
+                height: 30px;
+                color: #fff;
+                text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+                font-weight: 400;
+                background-color:red;
+                background: -webkit-gradient(linear,left top,left bottom,from(#ec7979),to(red));
+                border: 0;
+                margin-top: 20px;
+            }
+
+
+            /*footer*/
+            footer{
+                color: white;
+            }
+
+        </style>
+
+        <div id="content">
+            <div class="nav-wrapper">
+                <div id="nav-content">
+                    <ul class="nav nav-left">
+                        <li><a href="" title="首页">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                        <li class="selected"><a href="" title="功能介绍">功能介绍</a></li>
+                        <li><a href="" title="管理中心">管理中心</a></li>
+                    </ul>
+                    <img id="logo" src="logo.png">
+                    <ul class="nav nav-right">
+                        <li><a href="" title="帮助中心">帮助中心</a></li>
+                        <li><a href="" title="关于我们">关于我们</a></li>
+                        <li><a href="" title="官方博客">官方博客</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="slides">
+                <div class="slide" style="background-image:url(imgs/bankarenje_back.jpg);">
+                    <div class="mask">                                
+                        <img class="slide-content"src="imgs/landscape.png">
+                    </div>
+                </div>
+                <div class="slide active" style="background-image:url(imgs/greyp_back.jpg);">
+                    <div class="mask">                                
+                        <img class="slide-content"src="imgs/greyp_landscape.png">
+                    </div>
+                </div>
+                <div class="slide" style="background-image:url(imgs/back.jpg);">
+                    <div class="mask">                                
+                        <img class="slide-content"src="imgs/landscape2.png">
+                    </div>
+                </div>
+                <form  id="login-form">
+                    <fieldset>               
+                        <legend>登陆微信风</legend>                     
+                        <div class="input-box">
+                            <label for="user"><i class="fa fa-user fa-2x"></i></label>
+                            <input name="user" id="user" type="text" /> 
+                        </div>
+                        <div class="input-box">
+                            <label for="password"><i class="fa fa-unlock fa-2x"></i></label> 
+                            <input name="password" id="password" type="text" />
+                        </div>
+                        <a href="" id="get-psw">忘记登录密码?</a> 
+                        <div class="input-box" id="captcha-wrapper">
+                            <label for="captcha"><i class="fa fa-filter fa-2x"></i></label>
+                            <input name="captcha" id="captcha" type="text" /> 
+                        </div>
+                        <button >登录</button>
+                        <a href="" id="register-link">免费注册</a>
+                        <a href="">账户激活</a>                   
+                    </fieldset>
+                </form>
+            </div>
+
+            <ul class="feature">
+                <li>
+                    <a href="" title="微官网"><i class="fa fa-mobile fa-5x"></i><p>微官网</p></a>
+                    <p class="intro">5分钟轻松建站</br>打造酷炫微官网</p>
+                </li> 
+                <li>
+                    <a href="" title="微活动"><i class="fa fa-money fa-5x"></i><p>微活动</p></a>
+                    <p class="intro">吸引客户参与</br>增强用户沉淀</p>
+                </li> 
+                <li>
+                    <a href="" title="微房产"><i class="fa fa-home fa-5x"></i><p>微房产</p></a>
+                    <p class="intro">房产行业有力的解决方案</br>360度看房更给力</p>
+                </li> 
+                <li>
+                    <a href="" title="微汽车"><i class="fa fa-truck fa-5x"></i><p>微汽车</p></a>
+                    <p class="intro">预约试驾活保养 车主关怀</br>360度看车应有尽有</p>
+                </li> 
+                <li>
+                    <a href="" title="微统计"><i class="fa fa-superscript fa-5x"></i><p>微统计</p></a>
+                    <p class="intro">折线图清晰查询数据</br>助力企业营销</p>
+                </li>
+                <li>
+                    <a href="" title="微酒店"><i class="fa fa-hospital-o fa-5x"></i><p>微酒店</p></a>
+                    <p class="intro">在线订房融入微信</br>酒店营销多一条有力途径</p>
+                </li>  
+            </ul>
+        </div>
+
+        <footer> 
+            <div>联系方式</div>
+
+            Copyright © 2013-2014 www.weixinfr.com All Rights Reserved 微信风版权所有 浙ICP备12045520号        
+        </footer>
+    </body>
+
+</html>

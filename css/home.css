@@ -1,0 +1,246 @@
+/*-------colors-------
+    @dark gray: #3f3f3f;
+    @light blue: #00bde5;
+    @light gray: #f4f4f4;
+
+---------------------*/
+/*color style*/
+ul.feature li div,#login-form button,ul.cases>a.reg-btn{
+    background-color: #00bde5;
+}
+#login-form #register-link,#qrcode p,
+ul.cases>a{
+    color: #00bde5;
+}
+
+ul.feature div p, ul.cases>a.reg-btn{
+    color: white;
+}
+
+/*feature list*/
+#content{
+    width: 100%;
+}
+ul.feature{
+    width: 900px;
+    margin: auto;
+    padding: 60px;
+
+}
+/*icon*/
+.feature .fa {
+    color: white;
+    padding-top: 20%; /*why padding not margin?*/
+    display: block;
+}
+
+ul.feature li{
+    text-align: center;
+    float: left;
+    margin: 20px 20px;
+    
+}
+
+ul.feature li div{ 
+    display: block;               
+    border-radius:50%;
+    -moz-border-radius:50%; /* Old Firefox */
+    width: 100px;
+    height: 100px;
+    text-align: center; /*center imgs and text*/
+    margin: auto;   
+}
+ul.feature li div p{
+    font-size: 1em;
+    margin: 0.3em;
+}
+p.intro{
+    line-height: 145%;
+    text-align: center;
+    margin-top: 10px;
+    width: 180px;
+}
+/*slides*/
+#slides{
+    margin-top: 67px;
+    position: relative;
+    overflow: hidden;
+}
+.slide img{
+    display: block;
+    margin: 0px -150px;
+
+    
+}
+.slide{
+    display: none;
+}
+.active{
+    display: block;
+}
+
+/*登陆框*/
+#login-wrapper{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    padding: 10px 30px;
+    width: 220px;
+    background-color: rgba(0,0,0,0.4);
+}
+#login-wrapper a{
+    float: right;
+    color: white;
+    font-size: 0.8em;
+    margin: 10px 0px 10px 10px;
+
+}
+#login-wrapper a.qrcode-target {
+    margin: 0;
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    top: 0;
+    right: 0;
+    background-image: url(../imgs/icon.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 101;
+    -webkit-transition: background-position .2s cubic-bezier(0.25,.5,.5,.9);
+    -moz-transition: background-position .2s cubic-bezier(0.25,.5,.5,.9);
+    transition: background-position .2s cubic-bezier(0.25,.5,.5,.9);
+}
+#login-wrapper a.qrcode-target-show {
+    background-position: -253px -146px;               
+}
+#login-wrapper a.qrcode-target-hide {
+    background-position: -207px -100px;
+}
+
+#login-form input{
+    padding: 9px;
+    height: 20px;
+    border: solid white 1px;
+    line-height: 12px;
+    width: 10em;
+}
+
+#login-form fieldset { 
+    width: 220px;
+    border : 0px;
+    
+}
+#login-wrapper .title{                 
+    font-size: 1.3em;
+    color: white;
+    margin-bottom: 15px;
+}
+#login-form label {
+    float: left; 
+    width: 40px;
+    height: 35px;
+    background-color: #aaabab;
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+#login-form input:focus{
+    outline:none;
+}
+.input-box{
+    margin: 20px 0px 0px 0px;
+}
+#login-form #captcha{
+    width: 4em;
+}
+
+#captcha-wrapper{
+    margin-top: 50px;
+}
+#login-form button{
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    font-weight: 400;
+    /*background: -webkit-gradient(linear,left top,left bottom,from(#ec7979),to(red));*/
+    border: 0;
+    margin-top: 20px;
+}
+#login-form span.icon{
+    display: inline-block;
+    background-image: url(../imgs/icon.png);
+    width: 40px;
+    height: 40px;
+}
+#qrcode{
+    text-align: center;
+    width: 165px;
+    margin: 20px auto;
+    display: none;
+}
+#qrcode p{
+    font-size: 1em;
+    margin: 15px;
+}
+#qrcode img{
+    width: 120px;
+    height: 120px;
+}
+
+/*case list*/
+#case-wrapper{
+    background-color: white;
+}
+ul.cases{
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+    border-bottom: solid 1px #d7dde6;
+}
+ul.cases li{
+    background-image: url(../imgs/brands.png);
+    width: 140px;
+    height: 70px;
+    float: left;
+    margin: 40px 30px;
+}
+ul.cases li div{
+    background-image: url(../imgs/brands.png);
+    position: relative;
+    opacity: 0.0;
+    display: block;
+    height: 70px;
+    width: 140px;
+    -webkit-transition: opacity 600ms ease-in-out 0ms;
+    -moz-transition: opacity 600ms ease-in-out 0ms;
+    -o-transition: opacity 600ms ease-in-out 0ms;
+    transition: opacity 600ms ease-in-out 0ms;
+}
+ul.cases li div:hover{
+    opacity: 1.0;
+}
+ul.cases li div:hover img{
+    width: 160px;
+    height: 160px;
+    top: 60px;
+    left: -10px;
+}
+ul.cases li div img{
+    position: absolute;
+    top: -9000px;
+}
+ul.cases>a{
+    margin:auto;
+    margin-top: 60px;
+    display: block;
+}
+ul.cases>a.reg-btn{
+    display: block;
+    width: 150px;
+    height: 35px;
+    line-height: 2em;
+    margin-bottom: -17px;
+}

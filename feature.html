@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="">
+        <meta name="Description" content="">
+        <title>微信风（weixinfr）—国内最大的微信公众服务平台</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/feature.css">
+        <script type="text/javascript" src="js/jQuery.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $(".feature li a").click(function(e){
+                e.preventDefault(); /*a元素本来会刷新页面！！要先去掉原来的效果！！妈蛋*/
+                var targetList = $(".function");
+                var targetID = "#"+$(this).attr("date-target");
+                $(targetID).show(500);
+                $(targetID).siblings().hide(500);
+            });
+        });
+        </script>
+
+        <!--导航栏-->      
+        <div class="nav-wrapper">
+            <div id="nav-content">
+                <ul class="nav nav-left">
+                    <li><a href="index.html" title="首页">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                    <li class="selected"><a href="feature.html" title="功能介绍">功能介绍</a></li>
+                    <li><a href="" title="管理中心">管理中心</a></li>
+                </ul>
+                <img id="logo" src="logo.png">
+                <ul class="nav nav-right">
+                    <li><a href="http://blog.weixinfr.com/" title="官方博客">官方博客</a></li>
+                    <li><a href="about.html" title="关于我们">关于我们</a></li>
+                    <li><a href="help.html" title="帮助中心">帮助中心</a></li>                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature">
+            <ul class="nav">
+                <li  class="selected">
+                    <a href="" title="微官网" date-target="feature1">微官网</a>
+                </li> 
+                <li>
+                    <a href="" title="微活动" date-target="feature2">微活动</a>
+                </li> 
+                <li>
+                    <a href="" title="微活动" date-target="feature3">微活动</a>
+                </li> 
+                <li>
+                    <a href="" title="微房产" date-target="feature4">微房产</a>
+                </li> 
+                <li>
+                    <a href="" title="微汽车" date-target="feature5">微汽车</a>
+                </li> 
+                <li>
+                    <a href="" title="微统计" date-target="feature6">微统计</a>
+                </li>
+                <li>
+                    <a href="" title="微酒店" date-target="feature7">微酒店</a>
+                </li>  
+                <li>
+                    <a href="" title="微活动" date-target="feature8">微活动</a>
+                </li> 
+            </ul>
+            <div class="content">
+                <div class="function" id="feature1">
+                    <h3>微官网:快速帮用户打造超炫微信移动网站</h3>
+                    <img src="imgs/weimob1.jpg">
+                    <p class="guidep">微信风全国首创微信微官网，用户只要通过简单的设置，就能快速生成属于您自己的微信微官网，并且有各种精美模板，可供选择，还有自定义模版，可以设计出自己的风格，让您的粉丝有种惊艳的感觉。在微信风官方微信号输入"首页"体验微信微官网。</p>
+                </div>  
+                <div class="function" id="feature2" style="display:none">
+                    <h3>微活动:优惠券+刮刮卡+大转盘+微投票+一战到底的会员再营销</h3>
+                    <img src="imgs/weimob3.jpg">
+                    <p class="guidep">我们将利用微信的强交互性，让您通过对互动流程、环节和方式的设计，运用各种设计活动从而实现与用户的互动交流,，微整合系统互动符合微信娱乐性强的产品本质，微信风内置了专为商家定制的“商家营销服务模块”，包括优惠券推广模块、幸运大转盘推广模块、刮刮卡抽奖模块、微投票、一战到底等功能模块，商家通过发起营销活动，对已有客户进行再营销，通过不断更新补充主题，用户可以反复参与，并可带动周边朋友一起分享，从而形成极强的口碑营销效果。</p>
+                </div>
+                <div class="function" id="feature3" style="display:none">
+                    <h3>微活动:优惠券+刮刮卡+大转盘+微投票+一战到底的会员再营销</h3>
+                    <img src="imgs/weimob3.jpg">
+                    <p class="guidep">我们将利用微信的强交互性，让您通过对互动流程、环节和方式的设计，运用各种设计活动从而实现与用户的互动交流,，微整合系统互动符合微信娱乐性强的产品本质，微信风内置了专为商家定制的“商家营销服务模块”，包括优惠券推广模块、幸运大转盘推广模块、刮刮卡抽奖模块、微投票、一战到底等功能模块，商家通过发起营销活动，对已有客户进行再营销，通过不断更新补充主题，用户可以反复参与，并可带动周边朋友一起分享，从而形成极强的口碑营销效果。</p>
+                </div> 
+                <div class="function" id="feature4" style="display:none">
+                    <h3>微房产:360度全景看房</h3>
+                    <img src="imgs/weimob11.jpg">
+                    <p class="guidep">微房产是利用微信风平台打造的一款全新超炫酷的房产官方网站，其功能非常强大，包含了楼盘介绍、子楼盘管理、户型介绍及户型图、楼盘相册、房友印象以及专家点评等功能，更有360度全景看房超强大功能震撼登场！花几分钟时间即可打造微房产官网。</p>
+                </div> 
+                <div class="function" id="feature5" style="display:none">
+                    <h3>微汽车：预约试驾、预约保养、360度看车、车主关怀应有尽有！</h3>
+                    <img src="imgs/weimob12.jpg">
+                    <p class="guidep">微汽车采用微信风平台进行汽车的销售管理、预约保养、预约试驾、保险计算、车贷计算、车型比较、违章查询、360度全景看车、车主关怀等功能，整个过程非常便捷，省时省力省心，并通过与微信风平台有交互能力的手机客户端，快速便捷的实现了商家的销售管理与预约过程，同时也实现了客户无需进入4s店就能进行预约保养和试驾的功能。</p>
+                </div>  
+                <div class="function" id="feature6" style="display:none">
+                    <h3>微统计:实时数据统计，监控运营效果</h3>
+                    <img src="imgs/weimob10.jpg">
+                    <p class="guidep">微信风后台可以实时统计微信公众号的粉丝关注情况和用户语音请求数，根据统计对相关推广营销活动效果及某些敏感因素对您的影响作出判断，并对相关市场行为作出相应调整，从一定程度上实现了对市场的监控与及时应对。</p>
+                </div> 
+                <div class="function" id="feature7" style="display:none">
+                    <h3>微酒店：一键点击，轻松订房</h3>
+                    <img src="imgs/weimob15.jpg">
+                    <p class="guidep">1、消息管理：包含自动消息回复和功能性消息编辑功能，优化对用户的消息服务，提升用户体验。</p>
+                    <p class="guidep">2、门店管理：即对门店详情页面显示内容进行管理，且用户可直接一键导航或一键拨号。</p>
+                    <p class="guidep">3、用户管理：用户信息管理模块，给每个用户打上各种标签，为精准营销提供服务。</p>
+                    <p class="guidep">4、数据统计：各式各样的数据为后期运营提供重要帮助。</p>
+                    <p class="guidep">5、提供服务：用户直接可在公众账号进行预约房间、预约餐厅等操作。</p>
+
+                </div> 
+                <div class="function" id="feature8" style="display:none">
+                    <h3>微活动:优惠券+刮刮卡+大转盘+微投票+一战到底的会员再营销</h3>
+                    <img src="imgs/weimob3.jpg">
+                    <p class="guidep">我们将利用微信的强交互性，让您通过对互动流程、环节和方式的设计，运用各种设计活动从而实现与用户的互动交流,，微整合系统互动符合微信娱乐性强的产品本质，微信风内置了专为商家定制的“商家营销服务模块”，包括优惠券推广模块、幸运大转盘推广模块、刮刮卡抽奖模块、微投票、一战到底等功能模块，商家通过发起营销活动，对已有客户进行再营销，通过不断更新补充主题，用户可以反复参与，并可带动周边朋友一起分享，从而形成极强的口碑营销效果。</p>
+                </div> 
+
+            </div>
+        </div>
+
+        <!--尾部--> 
+        <footer>
+            <div id="footer-content">
+                <img src="logo.png">
+                <div class="contact">
+                    <a href="">微信定制</a>|
+                    <a href="">客户咨询</a>|
+                    <a href="">加入我们</a>|
+                    <a href="">关于微信风</a>
+                </div>
+                <p class="copyright">Copyright © 2013-2014 www.weixinfr.com All Rights Reserved 微信风版权所有 浙ICP备12045520号</p>  
+            </div>       
+        </footer>  
+    </body>
+</html>
