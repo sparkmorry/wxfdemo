@@ -1,0 +1,47 @@
+
+/*-------colors-------
+@dark gray: #d7dde6;边框
+@dark blue: #00bde5; 字
+@light gray: #f4f4f4;背景
+@light blue: #c5f5ff; 背景
+
+---------------------*/
+.feature{
+    width: 900px;
+    margin: 87px auto 10px auto;
+    padding: 50px;
+    background-color: white;
+    border: solid 1px #d7dde6;
+}
+.feature ul.nav{
+
+}
+.feature ul.nav li a{
+    color:#3f3f3f;
+}
+.feature ul.nav li{
+    float: left;
+    padding: 10px;
+}
+.feature ul.nav li.selected{
+    border-bottom: solid 2px #00bde5;
+}
+.feature ul.nav li.selected a{
+    color: #00bde5;
+}
+.feature ul.nav li a:hover{
+    color: #00bde5;
+}
+.feature div.function{
+    padding: 30px;
+    border: solid 1px #d7dde6;
+}
+.feature div.function img{
+    margin: 20px 0px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}

@@ -1,0 +1,55 @@
+/*-------colors-------
+@dark gray: #d7dde6;边框
+@dark blue: #00bde5; 字
+@light gray: #f4f4f4;背景
+@light blue: #c5f5ff; 背景
+
+---------------------*/
+.help h1{
+	background-color: #f4f4f4;
+}
+.help a{
+	color:#00bde5;
+}
+.help h2{
+	background-color: #c5f5ff;
+}
+.help h2{
+	color: #03b0d5;
+}
+div.help{
+	width: 900px;
+	margin: 87px auto 10px auto;
+	padding: 50px;
+	border:solid 1px #d7dde6;
+	background-color: white;
+}
+
+.help img{
+	 width:790px;
+}
+.help .content{
+	width: 790px;
+	margin: auto;
+}
+.help h1{
+	padding: 20px;
+	border:solid 1px #d7dde6;
+}
+.help h2{
+	padding: 20px;
+	/*border-radius:5px;
+	-moz-border-radius:5px; /* Old Firefox 
+	background-color: #D7DDE6;
+	border:1px solid #C1C9D4;
+	color: #626B8A;*/
+	width: 600px;
+	margin: 20px -55px;        		
+}
+.help p{
+	font-size: 0.95em;
+	margin: 15px 0px;
+}
+.help #qq{
+	margin-left: -55px;
+}

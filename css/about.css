@@ -1,0 +1,43 @@
+.about{
+    width: 900px;
+    margin: 87px auto 10px auto;
+    padding: 50px;
+    text-align: center;
+    background-color: white;
+    border: solid 1px #d7dde6;
+}
+.about img{
+    width: 200px;
+}
+.about p{
+    margin: 10px;
+    line-height: 1.4em;
+    text-align: left;
+}
+.highlight{
+    color: #00bde5;
+}
+.about h3{
+    text-align: left;
+    margin: 10px;
+}
+.about h2{
+    margin: 20px;
+}
+ul#strength li{
+    width: 300px;
+    float: left;
+}
+ul#strength{
+    padding-bottom: 50px;
+    border-bottom: solid 1px #d7dde6;
+}
+a.join-btn{
+    display: block;
+    width: 150px;
+    height: 35px;
+    line-height: 2.2em;
+    color: white;
+    background-color: #00bde5;
+    margin: -17px auto 50px auto;
+}
