@@ -10,100 +10,28 @@
         <title>微信风（weixinfr）—国内最大的微信公众服务平台</title>
         <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/register.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
     </head>
 
     <body>
-        <style type="text/css">
-
-            #reg-wrapper{
-                width: 800px;
-                margin: auto;
-                margin-top: 50px;
-                margin-bottom: 100px;
-                padding: 30px;
-                background-color: white;
-
-            }
-            .aside{
-                float: right;
-                margin-top: 80px;
-            }
-            span.highlight{
-                color: #00bde5;
-            }
-            form#register-form{
-                width: 340px;
-                display: inline-block;
-                padding: 20px;
-            }
-            #register-form fieldset { 
-                width: 300px;
-                border : 0px;
-                
-            }
-            #register-form label {
-                float: left; 
-                width: 40px;
-                height: 35px;
-                background-color: #aaabab;
-                color: white;
-                text-align: center;
-                padding-bottom: 5px;
-                cursor: pointer;
-            }
-            #register-form input:focus{
-                outline:none;
-            }
-            .input-box{
-                margin: 20px 0px 0px 0px;
-            }
-            .title{
-                margin-bottom:20px; 
-            }
-            #register-form button{
-                width: 100%;
-                height: 40px;
-                color: #fff;
-                font-weight: 400;
-                /*background: -webkit-gradient(linear,left top,left bottom,from(#ec7979),to(red));*/
-                border: 0;
-                margin-top: 20px;
-                background-color: #00bde5;
-            }
-            #register-form span.icon{
-                display: inline-block;
-                background-image: url(imgs/icon.png);
-                width: 40px;
-                height: 40px;
-            }
-            #register-form input{
-                padding: 9px;
-                height: 20px;
-                border: solid white 1px;
-                line-height: 12px;
-                width: 15em;
-                background-color: #f4f4f4;
-            }
-            h1{
-                margin-top: 137px;
-                text-align: center;
-            }
-            .aside a{
-                color: #00bde5;
-            }
-
-        </style>  
-        <!--导航栏-->      
+    <style type="text/css">
+        form{
+            width: 340px;
+            display: inline-block;
+            padding: 20px;
+        }
+        .aside{
+            float: right;
+            margin-top: 80px;
+        }
+    </style>
         <div class="nav-wrapper">
             <div id="nav-content">
-                <ul class="nav nav-left">
-                    <li><a href="index.html" title="首页">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+                <ul class="nav">
+                    <li class="selected nav-text"><a href="index.html" title="首页">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
                     <li><a href="feature.html" title="功能介绍">功能介绍</a></li>
                     <li><a href="" title="管理中心">管理中心</a></li>
-                </ul>
-                <img id="logo" src="logo.png">
-                <ul class="nav nav-right">
+                    <li><img id="logo" src="logo.png"></li>
                     <li><a href="http://blog.weixinfr.com/" title="官方博客">官方博客</a></li>
                     <li><a href="about.html" title="关于我们">关于我们</a></li>
                     <li><a href="help.html" title="帮助中心">帮助中心</a></li> 
@@ -122,14 +50,16 @@
                             <span class="icon" style="background-position:-2px 5px;"></span>
                         </label>
                         <input name="user" id="user" type="text" /> 
+                        <p id="user-msg" class="msg"></p>
                     </div>
                     <div class="input-box">
                         <label for="password">
                             <span class="icon" style="background-position:-84px 5px;"></span>
                         </label> 
-                        <input name="password" id="password" type="text" />
+                        <input name="password" id="password" type="password" />
+                        <p id="psw-msg" class="msg"></p>
                     </div>
-                    <button >点击注册</button>
+                    <button>点击注册</button>
                 </fieldset>
             </form>
 
@@ -154,6 +84,43 @@
                 <p class="copyright">Copyright © 2013-2014 www.weixinfr.com All Rights Reserved 微信风版权所有 浙ICP备12045520号</p>  
             </div>       
         </footer>
+
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+              $("button").click(function(e){
+                e.preventDefault();
+                var username=$("#user").val();
+                var password=$("#password").val();
+                var logged;
+
+                if(username==''){                                       
+                    logged="<i class='fa fa-times-circle-o'></i>";
+                    $("p#user-msg").css('color','#fc6f4c');
+                    $("#user-msg").html( logged + "用户名不能为空" );
+                    
+                }
+                if(password==''){
+                    logged="<i class='fa fa-times-circle-o'></i>";
+                    $("p#psw-msg").css('color','#fc6f4c');
+                    $("#psw-msg").html( logged + "密码不能为空" );
+                    
+                }
+                if(username != ''){
+                    logged="<i class='fa fa-check-circle-o'></i>";
+                    $("p#user-msg").css('color','#03e19a');
+                    $("#user-msg").html( logged + "用户名可以使用" );
+                    
+                }
+                if (password != '') {
+                    logged="<i class='fa fa-check-circle-o'></i>";
+                    $("p#psw-msg").css('color','#03e19a');
+                    $("#psw-msg").html( logged + "密码可以使用" );
+                };
+              });
+            });
+
+        </script>
     </body>
 
 </html>

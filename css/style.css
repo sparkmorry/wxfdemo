@@ -38,30 +38,23 @@ h3{
     width: 960px;
     overflow: hidden;
     margin: auto;
-    text-align:center;
     padding-top: 2px;
 }
 
 /* 2 nav bars, left&right*/
 .nav-wrapper ul.nav{
-    width: 410px;
-}
-.nav-left, .nav-left li{
-    float: left;
-}
-.nav-right, .nav-right li{
-    float: right;
-    
+    width: 960px;
 }
 /*logo centered*/
-#logo{
-    width: 120px;
-    margin: auto;
+.nav-wrapper ul.nav img#logo{
+    margin-top: -65px;
+    margin-bottom: -10px;
 }
 
 .nav-wrapper ul.nav li{
-    margin: 0px 7%;
-    padding-top: 20px; /*stretch the height*/
+    margin: 0px 30px;
+    padding: 20px 0px 25px 0px; /*stretch the height*/
+    display: inline-block;
 }
 .nav-wrapper ul.nav li.selected{
     border-top: solid #00bde5 3px; /*intend for js*/

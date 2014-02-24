@@ -13,31 +13,17 @@
         <script type="text/javascript" src="js/jQuery.js"></script>
     </head>
     <body>
-        <script type="text/javascript">
-        $(document).ready(function(){
-            $(".feature li a").click(function(e){
-                e.preventDefault(); /*a元素本来会刷新页面！！要先去掉原来的效果！！妈蛋*/
-                var targetList = $(".function");
-                var targetID = "#"+$(this).attr("date-target");
-                $(targetID).show(500);
-                $(targetID).siblings().hide(500);
-            });
-        });
-        </script>
-
         <!--导航栏-->      
         <div class="nav-wrapper">
             <div id="nav-content">
-                <ul class="nav nav-left">
+                <ul class="nav">
                     <li><a href="index.html" title="首页">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
                     <li class="selected"><a href="feature.html" title="功能介绍">功能介绍</a></li>
                     <li><a href="" title="管理中心">管理中心</a></li>
-                </ul>
-                <img id="logo" src="logo.png">
-                <ul class="nav nav-right">
+                    <li><img id="logo" src="logo.png"></li>
                     <li><a href="http://blog.weixinfr.com/" title="官方博客">官方博客</a></li>
                     <li><a href="about.html" title="关于我们">关于我们</a></li>
-                    <li><a href="help.html" title="帮助中心">帮助中心</a></li>                    
+                    <li><a href="help.html" title="帮助中心">帮助中心</a></li> 
                 </ul>
             </div>
         </div>
@@ -132,5 +118,19 @@
                 <p class="copyright">Copyright © 2013-2014 www.weixinfr.com All Rights Reserved 微信风版权所有 浙ICP备12045520号</p>  
             </div>       
         </footer>  
+        
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $(".feature li a").click(function(e){
+                e.preventDefault(); /*a元素本来会刷新页面！！要先去掉原来的效果！！妈蛋*/
+                var targetList = $(".function");
+                var targetID = "#"+$(this).attr("date-target");
+                $(this).parent().addClass("selected");
+                $(this).parent().siblings().removeClass("selected");
+                $(targetID).show(500);
+                $(targetID).siblings().hide(500);
+            });
+        });
+        </script>
     </body>
 </html>

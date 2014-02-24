@@ -83,7 +83,7 @@ p.intro{
 #login-wrapper{
     position: absolute;
     top: 20px;
-    right: 30px;
+    left: 900px;
     padding: 10px 30px;
     width: 220px;
     background-color: rgba(0,0,0,0.4);
