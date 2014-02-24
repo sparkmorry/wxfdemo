@@ -5,7 +5,7 @@
 
 ---------------------*/
 /*color style*/
-ul.feature li div,#login-form button,ul.cases>a.reg-btn{
+ul.feature li div,#login-form button,#case-wrapper>a.reg-btn{
     background-color: #00bde5;
 }
 #login-form #register-link,#qrcode p,
@@ -13,7 +13,7 @@ ul.cases>a{
     color: #00bde5;
 }
 
-ul.feature div p, ul.cases>a.reg-btn{
+ul.feature div p, #case-wrapper>a.reg-btn{
     color: white;
 }
 
@@ -68,7 +68,7 @@ p.intro{
 }
 .slide img{
     display: block;
-    margin: 0px -150px;
+    margin: 0px -210px;
 
     
 }
@@ -192,13 +192,16 @@ p.intro{
 /*case list*/
 #case-wrapper{
     background-color: white;
+    padding: 50px 0px;
 }
 ul.cases{
     width: 800px;
     margin: auto;
     text-align: center;
-    padding: 50px;
-    border-bottom: solid 1px #d7dde6;
+    padding: 10px;
+    padding-bottom: 100px;
+    
+    border-bottom: solid #d7dde6 1px;
 }
 ul.cases li{
     background-image: url(../imgs/brands.png);
@@ -237,10 +240,14 @@ ul.cases>a{
     margin-top: 60px;
     display: block;
 }
-ul.cases>a.reg-btn{
+#case-wrapper>a.reg-btn{
     display: block;
     width: 150px;
     height: 35px;
     line-height: 2em;
-    margin-bottom: -17px;
+    margin: auto;
+    margin-top: -17px;
+    text-align: center;
+    z-index: 100;
+
 }
