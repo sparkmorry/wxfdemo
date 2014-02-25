@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-size: 16px;
+    font-family: Microsoft YaHei;
 }
 body{
     min-width: 960px; /*fixed layout*/
@@ -27,6 +28,11 @@ h2{
 h3{
 	font-size: 1.1em;
 }
+::-moz-selection{background:#00bde5;color:#fff}
+::selection{background:#00bde5;color:#fff}
+a::-moz-selection{background:#00bde5;color:#fff}
+a::selection{background:#00bde5;color:#fff}
+
 /* nav list */
 .nav-wrapper{
     width: 100%;

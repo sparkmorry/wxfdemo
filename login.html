@@ -15,6 +15,15 @@
 
     <body>
         <style type="text/css">
+        form{
+            width: 340px;
+            display: inline-block;
+            padding: 20px;
+        }
+        .aside{
+            float: right;
+            margin-top: 80px;
+        }
         </style>  
         <!--导航栏-->      
         <div class="nav-wrapper">
@@ -24,9 +33,9 @@
                     <li><a href="feature.html" title="功能介绍">功能介绍</a></li>
                     <li><a href="" title="管理中心">管理中心</a></li>
                     <li><img id="logo" src="logo.png"></li>
-                    <li><a href="http://blog.weixinfr.com/" title="官方博客">官方博客</a></li>
                     <li><a href="about.html" title="关于我们">关于我们</a></li>
                     <li><a href="help.html" title="帮助中心">帮助中心</a></li> 
+                    <li><a href="http://blog.weixinfr.com/" title="官方博客">官方博客</a></li>
                 </ul>
             </div>
         </div>
@@ -42,12 +51,14 @@
                             <span class="icon" style="background-position:-2px 5px;"></span>
                         </label>
                         <input name="user" id="user" type="text" /> 
+                        <p id="user-msg" class="msg"></p>
                     </div>
                     <div class="input-box">
                         <label for="password">
                             <span class="icon" style="background-position:-84px 5px;"></span>
                         </label> 
-                        <input name="password" id="password" type="text" />
+                        <input name="password" id="password" type="password" />
+                        <p id="psw-msg" class="msg"></p>
                     </div>
                     <button >点击登录</button>
                 </fieldset>
@@ -66,16 +77,47 @@
         <!--尾部--> 
         <footer>
             <div id="footer-content">
-                <img src="logo.png">
+                <img src="imgs/logo.png">
                 <div class="contact">
                     <a href="">微信定制</a>|
                     <a href="">客户咨询</a>|
                     <a href="">加入我们</a>|
-                    <a href="">关于微信风</a>
+                    <a href="about.html">关于微信风</a>
                 </div>
                 <p class="copyright">Copyright © 2013-2014 www.weixinfr.com All Rights Reserved 微信风版权所有 浙ICP备12045520号</p>  
             </div>       
         </footer>
+
+        <script type="text/javascript" src="js/jQuery.js"></script>
+        <script type="text/javascript" src="js/msg.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+              $("button").click(function(e){
+                e.preventDefault();
+                var username=$("#user").val();
+                var password=$("#password").val();
+                var errorMsg = new Msg('error', '#fc6f4c', '<i class="fa fa-times-circle-o"></i>', '');
+                var successMsg = new Msg('success', '#03e19a', '<i class="fa fa-check-circle-o"></i>', '');
+
+                if(username==''){
+                    errorMsg.text = "用户名不能为空"; 
+                    errorMsg.showMsg('user-msg');                     
+                }
+                if(password==''){
+                    errorMsg.text = "密码不能为空";
+                    document.getElementById('psw-msg').style.display="block";
+                    errorMsg.showMsg('psw-msg');                    
+                }
+                if(username != '' && password != ''){
+                    errorMsg.text="用户名或密码错误";
+                    errorMsg.showMsg('user-msg');
+                    document.getElementById('psw-msg').style.display="none";
+                    
+                }
+              });
+            });
+        </script>
     </body>
 
 </html>

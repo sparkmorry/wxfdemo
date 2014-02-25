@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
 
-        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
         <meta name="Keywords" content="">
         <meta name="Description" content="">
         <title>微信风（weixinfr）—国内最大的微信公众服务平台</title>
@@ -25,9 +25,9 @@
                     <li><a href="feature.html" title="功能介绍">功能介绍</a></li>
                     <li><a href="" title="管理中心">管理中心</a></li>
                     <li><img id="logo" src="logo.png"></li>
-                    <li><a href="http://blog.weixinfr.com/" title="官方博客">官方博客</a></li>
                     <li><a href="about.html" title="关于我们">关于我们</a></li>
                     <li><a href="help.html" title="帮助中心">帮助中心</a></li> 
+                    <li><a href="http://blog.weixinfr.com/" title="官方博客">官方博客</a></li>
                 </ul>
             </div>
         </div>
@@ -62,12 +62,14 @@
                                     <span class="icon" style="background-position:-2px 5px;"></span>
                                 </label>
                                 <input name="user" id="user" type="text" /> 
+                                <p id="user-msg" class="msg"></p>
                             </div>
                             <div class="input-box">
                                 <label for="password">
                                     <span class="icon" style="background-position:-84px 5px;"></span>
                                 </label> 
-                                <input name="password" id="password" type="text" />
+                                <input name="password" id="password" type="password" />
+                                <p id="psw-msg" class="msg"></p>
                             </div>
                             <a href="getPW.html" id="get-psw">忘记登录密码?</a> 
                             <div class="input-box" id="captcha-wrapper">
@@ -99,12 +101,16 @@
                         <p class="intro">5分钟轻松建站</br>打造酷炫微官网</p>
                     </li> 
                     <li>
+                        <div><i class="fa fa-calendar fa-2x"></i><p>微会议</p></div>
+                        <p class="intro">让会议更智能</br>让会场更互动</p>
+                    </li>
+                    <li>
                         <div><i class="fa fa-money fa-2x"></i><p>微活动</p></div>
                         <p class="intro">吸引客户参与</br>增强用户沉淀</p>
                     </li> 
                     <li>
-                        <div><i class="fa fa-money fa-2x"></i><p>微活动</p></div>
-                        <p class="intro">吸引客户参与</br>增强用户沉淀</p>
+                        <div><i class="fa fa-user fa-2x"></i><p>微会员</p></div>
+                        <p class="intro">微信会员卡</br>让企业CRM更便捷 </p>
                     </li> 
                     <li>
                         <div><i class="fa fa-home fa-2x"></i><p>微房产</p></div>
@@ -123,8 +129,12 @@
                         <p class="intro">在线订房融入微信</br>酒店营销多一条有力途径</p>
                     </li>  
                     <li>
-                        <div><i class="fa fa-money fa-2x"></i><p>微活动</p></div>
-                        <p class="intro">吸引客户参与</br>增强用户沉淀</p>
+                        <div><i class="fa  fa-credit-card fa-2x"></i><p>微医疗</p></div>
+                        <p class="intro">在线挂号或咨询</br>了解病情微信都可以</p>
+                    </li> 
+                    <li>
+                        <div><i class="fa fa-plus-square fa-2x"></i><p>微电商</p></div>
+                        <p class="intro">小微信大商城</br>微信购物如此遍历</p>
                     </li> 
                 </ul>
             </div>
@@ -187,7 +197,7 @@
                 <div class="contact">
                     <a href="">微信定制</a>|
                     <a href="">客户咨询</a>|
-                    <a href="">加入我们</a>|
+                    <a href="about.html">加入我们</a>|
                     <a href="">关于微信风</a>
                 </div>
                 <p class="copyright">Copyright © 2013-2014 www.weixinfr.com All Rights Reserved 微信风版权所有 浙ICP备12045520号</p>  
@@ -212,6 +222,35 @@
 
             });
         });
+        </script>
+        <script type="text/javascript" src="js/msg.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+              $("button").click(function(e){
+                e.preventDefault();
+                var username=$("#user").val();
+                var password=$("#password").val();
+                var errorMsg = new Msg('error', '#fc6f4c', '<i class="fa fa-times-circle-o"></i>', '');
+                var successMsg = new Msg('success', '#03e19a', '<i class="fa fa-check-circle-o"></i>', '');
+
+                if(username==''){
+                    errorMsg.text = "用户名不能为空"; 
+                    errorMsg.showMsg('user-msg');                     
+                }
+                if(password==''){
+                    errorMsg.text = "密码不能为空";
+                    document.getElementById('psw-msg').style.display="block";
+                    errorMsg.showMsg('psw-msg');                    
+                }
+                if(username != '' && password != ''){
+                    errorMsg.text="用户名或密码错误";
+                    errorMsg.showMsg('user-msg');
+                    document.getElementById('psw-msg').style.display="none";
+                    
+                }
+              });
+            });
         </script>
     </body>
 

@@ -30,7 +30,7 @@ ul.feature{
 /*icon*/
 .feature .fa {
     color: white;
-    padding-top: 20%; /*why padding not margin?*/
+    padding-top: 19%; /*why padding not margin?*/
     display: block;
 }
 
@@ -45,20 +45,21 @@ ul.feature li div{
     display: block;               
     border-radius:50%;
     -moz-border-radius:50%; /* Old Firefox */
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     text-align: center; /*center imgs and text*/
     margin: auto;   
 }
 ul.feature li div p{
-    font-size: 1em;
+    font-size: 0.95em;
     margin: 0.3em;
 }
 p.intro{
     line-height: 145%;
     text-align: center;
     margin-top: 10px;
-    width: 180px;
+    width: 140px;
+    font-size: 0.9em;
 }
 /*slides*/
 #slides{
@@ -157,6 +158,7 @@ p.intro{
 
 #captcha-wrapper{
     margin-top: 50px;
+    display: none;
 }
 #login-form button{
     width: 100%;
@@ -167,6 +169,7 @@ p.intro{
     /*background: -webkit-gradient(linear,left top,left bottom,from(#ec7979),to(red));*/
     border: 0;
     margin-top: 20px;
+    cursor: pointer;
 }
 #login-form span.icon{
     display: inline-block;
@@ -250,4 +253,8 @@ ul.cases>a{
     text-align: center;
     z-index: 100;
 
+}
+.msg{
+    color: #fc6f4c;
+    margin-top: 10px;
 }
