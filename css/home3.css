@@ -200,6 +200,8 @@ ul.cases{
     text-align: center;
     padding: 10px;  
     padding-bottom: 75px; 
+    z-index: 10;
+    position: relative;
 }
 ul.cases li{
     background-image: url(../imgs/brands.png);
@@ -241,6 +243,16 @@ ul.cases li div img{
     line-height: 2em;
     margin: -45px auto 0px auto;
     text-align: center;
+    position: relative;
+}
+#border{
+    height: 1px;
+    background:  #d7dde6;
+    width: 900px;
+    margin: -20px auto 0px auto;
+    position: relative;
+    top: -25px;
+    
 }
 .msg{
     color: #fc6f4c;
