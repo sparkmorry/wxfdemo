@@ -211,7 +211,7 @@ ul.cases li{
     width: 140px;
     height: 70px;
     float: left;
-    margin: 40px 30px;
+    margin: 40px 10px;
 }
 ul.cases li div{
     background-image: url(../imgs/brands.png);
