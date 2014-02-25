@@ -5,16 +5,15 @@
 
 ---------------------*/
 /*color style*/
-ul.feature li div,#login-form button,#case-wrapper>a.reg-btn{
-    background-color: #00bde5;
-}
-#login-form #register-link,#qrcode p,
-ul.cases>a{
-    color: #00bde5;
+ul.feature div p, #reg-btn{
+    color: white;
 }
 
-ul.feature div p, #case-wrapper>a.reg-btn{
-    color: white;
+ul.feature li div,#login-form button, #reg-btn{
+    background-color: #00bde5;
+}
+#login-form #register-link,#qrcode p{
+    color: #00bde5;
 }
 
 /*feature list*/
@@ -24,7 +23,7 @@ ul.feature div p, #case-wrapper>a.reg-btn{
 ul.feature{
     width: 900px;
     margin: auto;
-    padding: 60px;
+    padding: 50px;
 
 }
 /*icon*/
@@ -69,9 +68,7 @@ p.intro{
 }
 .slide img{
     display: block;
-    margin: 0px -100px;
-
-    
+    margin: auto;    
 }
 .slide{
     display: none;
@@ -201,10 +198,10 @@ ul.cases{
     width: 800px;
     margin: auto;
     text-align: center;
-    padding: 10px;
-
-    
-    border-bottom: solid #d7dde6 1px;
+    padding: 10px;  
+    padding-bottom: 75px; 
+    z-index: 100;
+    position: relative;
 }
 ul.cases li{
     background-image: url(../imgs/brands.png);
@@ -229,30 +226,33 @@ ul.cases li div:hover{
     opacity: 1.0;
 }
 ul.cases li div:hover img{
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
     top: 60px;
-    left: -10px;
+    left: 12px;
 }
 ul.cases li div img{
     position: absolute;
     top: -9000px;
 }
-ul.cases>a{
-    margin:auto;
-    margin-top: 60px;
+
+#reg-btn{
     display: block;
-}
-#case-wrapper>a.reg-btn{
-    display: block;
-    width: 150px;
+    width: 200px;
     height: 35px;
     line-height: 2em;
-    margin: auto;
-    margin-top: -17px;
+    margin: -45px auto 0px auto;
     text-align: center;
-    z-index: 100;
-
+    position: relative;
+}
+#border{
+    height: 1px;
+    background:  #d7dde6;
+    width: 900px;
+    margin: -20px auto 0px auto;
+    position: relative;
+    top: -25px;
+    
 }
 .msg{
     color: #fc6f4c;
